@@ -267,13 +267,6 @@ function ProductList({ onHomeClick }) {
         }));
       };
 
-      const handleRemoveFromCart = (product) => {
-        dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
-        setAddedToCart((prevState) => ({ // Update the local state to reflect that the product has been added
-          ...prevState, // Spread the previous state to retain existing entries
-          [product.name]: false, // Set the current product's name as a key with value 'true' to mark it as added
-        }));
-      };
 
       const calculateTotalQuantity = () => {
         return cartItems ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
